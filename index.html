@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Sign up form</title>
+</head>
+<body>
+    <div class="container">
+        <img src="img.jpg" alt="Girl in a jacket" class="fit"> 
+        <div class="logo"> rodrigo </div> 
+       </div>
+    <div class="form">
+        <div class="text"> lots of text and heading to show you need to sign up over here because we love you and you are the best</div>
+    <form action="http://httpbin.org/post" method="post">
+        <div>
+          <label for="first_name">First Name:</label>
+          <input type="text" name="first_name" id="first_name" minlength="3" maxlength="20" title:'feel the requiesrit pass' required>
+        </div>
+      
+        <div>
+          <label for="last_name">Last Name:</label>
+          <input type="text" name="last_name" id="last_name" minlength="2" maxlength="20">
+        </div>
+      
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required>
+        </div>
+
+        <div>
+            <label for="tel">Telephone:</label>
+            <input type="tel" name="tel" id="tel" minlength="5" maxlength="20">
+          </div>
+
+          <label for="user_password">Password:</label>
+<input type="password" id="user_password" name="password" onChange="onChange()" required>
+
+
+<label for="pass">Confirm Password:</label>
+<input type="password" id="pass" name="pass" onChange="onChange()" required>
+
+<button type="submit" class="button">Create Account</button>
+
+</div>
+<script>
+    function onChange() {
+    const password = document.querySelector('input[name=password]');
+    const confirm = document.querySelector('input[name=pass]');
+    if (confirm.value === password.value) {
+      confirm.setCustomValidity('');
+    } else {
+      confirm.setCustomValidity('Passwords do not match');
+    }
+  }
+  
+  const button = document.getElementsByClassName('button');
+  const text = document.getElementsByClassName('text')
+  button.addEventListener('click', function() {
+  text.innerHTML = 'text submitted';
+  })
+  
+      </script>
+</body>
+</html>
